@@ -1,25 +1,63 @@
+'use client'
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import Link from 'next/link';
 import Image from 'next/image';
+import Offerings from '../components/Offerings';
+import Team from '../components/Team';
+import Blogs from '../components/Blogs';
+import { FaArrowUp } from 'react-icons/fa';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
+    const [isVisible, setIsVisible] = useState(false);
+
+    const toggleVisibility = () => {
+        if (window.pageYOffset > 300) {
+            setIsVisible(true);
+        } else {
+            setIsVisible(false);
+        }
+    };
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', toggleVisibility);
+        return () => {
+            window.removeEventListener('scroll', toggleVisibility);
+        };
+    }, []);
+
   return (
-    <div>
+    <div className="bg-white">
       <Navbar />
       <main>
         {/* Hero Section */}
         <section
-          className="bg-cover bg-center h-screen text-white py-32"
+          className="bg-cover bg-center h-screen text-white flex flex-col justify-center items-center"
           style={{ backgroundImage: "url('https://images.pexels.com/photos/1687845/pexels-photo-1687845.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')" }}
         >
-          <div className="container mx-auto text-center">
-            <h1 className="text-5xl font-serif mb-4">Nature Escapes, Exiting Adventures Trip</h1>
-            <p className="text-xl mb-8">Pretium fusce id velit ut. Aliquam etiam erat velit scelerisque in dictum non consectetur. Porttitor rhoncus dolor purus non enim praesent.</p>
-            <Link href="/packages" className="bg-accent text-foreground font-bold py-3 px-8 rounded-full hover:bg-opacity-80 transition duration-300">Explore More
+            <div className="absolute inset-0 bg-[#0B3D4A] opacity-60"></div>
+          <div className="container mx-auto text-center z-10">
+            <p className="text-sm font-bold tracking-widest">PACKAGE FOR THRILL-SEEKERS</p>
+            <h1 className="text-6xl font-serif my-4">Nature Escapes Exiting<br/>Adventures Trip</h1>
+            <p className="text-lg mb-8 max-w-2xl mx-auto">Pretium fusce id velit ut. Aliquam eleifend nulla posuere sollicitudin aliquam ultrices. Porta nibh venenatis felis. Sodales ut etiam amet.</p>
+            <div className="flex justify-center gap-4 mb-8">
+                <Image src="https://images.pexels.com/photos/1586795/pexels-photo-1586795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Couple hiking" width={200} height={150} className="rounded-lg" />
+                <Image src="https://images.pexels.com/photos/2387793/pexels-photo-2387793.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Coastal town" width={200} height={150} className="rounded-lg" />
+                <Image src="https://images.pexels.com/photos/1078983/pexels-photo-1078983.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Woman hiking" width={200} height={150} className="rounded-lg" />
+            </div>
+            <Link href="/packages" className="bg-green-400 text-black font-bold py-3 px-8 rounded-md hover:bg-opacity-80 transition duration-300">Explore More
             </Link>
           </div>
         </section>
+
+        <Offerings />
 
         {/* Discover Destinations Section */}
         <section className="py-16 bg-secondary">
@@ -63,8 +101,17 @@ export default function Home() {
             </Link>
           </div>
         </section>
+        <Team />
+        <Blogs />
       </main>
-      <Footer />
+      {isVisible && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-4 right-4 bg-green-400 text-black p-3 rounded-full shadow-lg hover:bg-opacity-80 transition duration-300"
+        >
+          <FaArrowUp />
+        </button>
+      )}
     </div>
   );
 }

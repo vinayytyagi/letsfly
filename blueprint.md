@@ -1,44 +1,68 @@
-
 # Project Blueprint
 
 ## Overview
 
-This project is a travel agency website. The goal is to create a visually appealing and user-friendly interface for users to browse travel packages and get in touch with the agency.
+This project is a travel and tourism website called "Letsgo". The goal is to create a visually appealing and user-friendly interface for browsing travel packages and destinations.
 
-## Implemented Features
+## Current State
 
-### Styling and Configuration
-- Tailwind CSS is configured with a custom color palette and fonts.
-- Colors:
-  - Primary: `#1A73E8`
-  - Secondary: `#F2F2F2`
-  - Accent: `#FFC107`
-  - Background: `#FFFFFF`
-  - Foreground: `#171717`
-- Fonts:
-  - Sans-serif: "Open Sans"
-  - Serif: "Playfair Display"
+### Design & Styling
 
-## Current Plan
+*   **Typography:**
+    *   Headings: Gloock
+    *   Body: Plus Jakarta Sans
+*   **Color Palette:**
+    *   Primary: `#1A73E8`
+    *   Secondary: `#F2F2F2`
+    *   Accent: `#FFC107`
+    *   Background: `#FFFFFF`
+    *   Foreground: `#171717`
+*   **Icons:** `react-icons` (Font Awesome)
 
-### 1. Create Pages
-- **Landing Page (`/app/page.js`):**
-  - Hero section with a background image and a call-to-action button.
-  - "Discover Stunning Destinations" section with a few featured packages.
-- **About Us Page (`/app/about/page.js`):**
-  - Information about the company.
-- **Packages Listing Page (`/app/packages/page.js`):**
-  - A grid of all available travel packages.
-  - Each package card will be a link that redirects to WhatsApp.
+### Features
 
-### 2. Create Components
-- **Navbar:** A navigation bar with links to Home, About Us, and Packages.
-- **Footer:** A footer with contact information and social media links.
-- **Package Card:** A reusable component to display a travel package.
+*   **Navigation Bar:**
+    *   Logo with `FaGlobe` icon.
+    *   Navigation links with dropdown menus for "Pages" and "Destination".
+    *   "Register Now" button.
+    *   Search icon (`FaSearch`).
+*   **Hero Section:**
+    *   Full-screen background image.
+    *   Centered text with a main heading, subheading, and descriptive paragraph.
+    *   Three smaller images displayed horizontally.
+    *   "Explore More" button.
+*   **Offerings Section:**
+    *   Image of a woman with a suitcase and a travel stamp overlay.
+    *   Headline: "Your Passport To Memorable Adventures".
+    *   Four offerings with icons, titles, and descriptions (Hill Stations, Road Trips, Outdoor Packages, Forest Safari).
+    *   "Discover Our Offerings" button.
+    *   "Happy Clients" section with profile pictures and a count.
+*   **Discover Destinations Section:**
+    *   Grid of four destination cards with images, titles, and price information.
+    *   "Explore All Destinations" button.
+*   **Team Section:**
+    *   Headline: "People Who Make Travel Enchanting".
+    *   "View Our Team" button.
+    *   Three team member cards with images, names, and titles.
+    *   Social media icons on each team member card.
+*   **Blogs Section:**
+    *   Headline: "News, Tips & Destination Stories".
+    *   "View All Blogs" link.
+    *   Three blog post cards with images, author, comments, title, excerpt, and "Read More" link.
+    *   Image zoom effect on hover.
+*   **Footer:**
+    *   Newsletter signup form.
+    *   Links for Information, Help, and Support.
+    *   App download buttons for Google Play and App Store.
+    *   Copyright information and social media links.
+*   **Scroll to Top Button:**
+    *   A button that appears in the bottom right corner when the user scrolls down.
+    *   Scrolls the page to the top when clicked.
 
-### 3. Functionality
-- Clicking on a package will redirect the user to a WhatsApp chat with a pre-filled message. The phone number will be hardcoded for now.
+## Plan for Current Request
 
-### 4. Styling
-- All pages and components will be styled using Tailwind CSS, following the design cues from the provided images.
-- The website will be responsive and work on mobile and desktop devices.
+*   **Objective:** Add a new "News, Tips & Destination Stories" section to the home page.
+*   **Steps:**
+    1.  Create a new `Blogs.js` component.
+    2.  Implement the layout and styling for the new section, including the title, blog cards, and image zoom effect.
+    3.  Add the new component to the `app/page.js` file.

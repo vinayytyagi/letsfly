@@ -1,5 +1,6 @@
 import { Gloock, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import Footer from "../components/Footer";
 
 const fontHeading = Gloock({
   variable: "--font-heading",
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
         className={`${fontHeading.variable} ${fontBody.variable} antialiased`}
       >
         {children}
+        <Footer />
       </body>
     </html>
   );
