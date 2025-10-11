@@ -21,15 +21,15 @@ const packages = [
     price: '$500',
     image: 'https://images.pexels.com/photos/356079/pexels-photo-356079.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
   },
-    {
+  {
     name: 'Serene Kerala',
     description: 'A 6-day journey through the tranquil backwaters of Kerala.',
     price: '$600',
     image: 'https://images.pexels.com/photos/1586795/pexels-photo-1586795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    },
+  },
 ];
 
-const phoneNumber = "1234567890"; // Replace with your phone number
+const phoneNumber = "7289840031";
 
 export default function Packages() {
   return (
@@ -45,15 +45,15 @@ export default function Packages() {
                 <h3 className="text-2xl font-serif mb-2">{pkg.name}</h3>
                 <p className="text-gray-700 mb-4">{pkg.description}</p>
                 <div className="flex justify-between items-center">
-                    <p className="text-xl font-bold text-primary">{pkg.price}</p>
-                    <a
-                        href={`https://wa.me/${phoneNumber}?text=I'm%20interested%20in%20the%20${encodeURIComponent(pkg.name)}%20package`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-accent text-foreground font-bold py-2 px-4 rounded-full hover:bg-opacity-80 transition duration-300"
-                    >
-                        Book Now
-                    </a>
+                  <p className="text-xl font-bold text-primary">{pkg.price}</p>
+                  <a
+                    href={`https://wa.me/${phoneNumber}?text=I'm%20interested%20in%20the%20${encodeURIComponent(pkg.name)}%20package`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-accent text-foreground font-bold py-2 px-4 rounded-full hover:bg-opacity-80 transition duration-300"
+                  >
+                    Book Now
+                  </a>
                 </div>
               </div>
             </div>

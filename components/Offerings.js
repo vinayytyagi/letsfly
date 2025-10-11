@@ -27,53 +27,56 @@ const Offerings = () => {
   ];
 
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="relative">
+    <section className="py-12 sm:py-16 bg-white">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="relative order-2 lg:order-1">
             <Image
               src="https://wdtletsgo.wpengine.com/wp-content/uploads/2025/03/Demo-1-Filler-Image.png"
               alt="Happy traveler"
               width={600}
               height={400}
-              className="rounded-lg"
+              className="rounded-lg w-full h-auto"
             />
-            <div className="absolute -top-4 -left-4 w-24 h-24 bg-white rounded-full flex items-center justify-center">
+            <div className="absolute -top-2 sm:-top-4 -left-2 sm:-left-4 w-16 h-16 sm:w-24 sm:h-24 bg-white rounded-full flex items-center justify-center">
               <Image
-                src="/stamp.png" // Assuming you have a stamp image in your public folder
+                src="/stamp.png"
                 alt="Travel Stamp"
-                width={80}
-                height={80}
+                width={60}
+                height={60}
+                className="sm:w-20 sm:h-20"
               />
             </div>
           </div>
-          <div>
-            <p className="text-sm font-bold text-gray-500">GET TAILOR-MADE EXPERIENCE</p>
-            <h2 className="text-4xl font-heading text-[#0B3D4A] my-4">Your Passport To Memorable Adventures</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <div className="order-1 lg:order-2">
+            <p className="text-xs sm:text-sm font-bold text-gray-500 animate-slide-in-left">GET TAILOR-MADE EXPERIENCE</p>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading text-[#0B3D4A] my-4 animate-slide-in-left" style={{ animationDelay: '0.2s' }}>Your Passport To Memorable Adventures</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 mt-6 lg:mt-8">
               {offerings.map((offering) => (
                 <div key={offering.title}>
                   <div className="flex items-center mb-2">
-                    {offering.icon}
-                    <h3 className="text-xl font-bold ml-4 text-[#0B3D4A]">{offering.title}</h3>
+                    <div className="w-8 h-8 sm:w-12 sm:h-12 flex-shrink-0">
+                      {offering.icon}
+                    </div>
+                    <h3 className="text-lg sm:text-xl font-bold ml-3 sm:ml-4 text-[#0B3D4A]">{offering.title}</h3>
                   </div>
-                  <p className="text-gray-600">{offering.description}</p>
+                  <p className="text-sm sm:text-base text-gray-600">{offering.description}</p>
                 </div>
               ))}
             </div>
-            <div className="mt-8 flex items-center">
-                <Button>Discover Our Offerings</Button>
-                <div className="flex items-center ml-6">
-                    <div className="flex -space-x-4">
-                        <Image src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client 1" width={40} height={40} className="rounded-full border-2 border-white" />
-                        <Image src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client 2" width={40} height={40} className="rounded-full border-2 border-white" />
-                        <Image src="https://randomuser.me/api/portraits/men/36.jpg" alt="Client 3" width={40} height={40} className="rounded-full border-2 border-white" />
-                    </div>
-                    <div className="ml-4">
-                        <p className="font-bold text-lg">114K+</p>
-                        <p className="text-gray-500">Happy Clients</p>
-                    </div>
+            <div className="mt-6 lg:mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <Button>Discover Our Offerings</Button>
+              <div className="flex items-center">
+                <div className="flex -space-x-2 sm:-space-x-4">
+                  <Image src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client 1" width={32} height={32} className="rounded-full cursor-pointer border-2 border-white sm:w-10 sm:h-10 transition-transform duration-300 hover:scale-110" />
+                  <Image src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client 2" width={32} height={32} className="rounded-full cursor-pointer border-2 border-white sm:w-10 sm:h-10 transition-transform duration-300 hover:scale-110" />
+                  <Image src="https://randomuser.me/api/portraits/men/36.jpg" alt="Client 3" width={32} height={32} className="rounded-full cursor-pointer border-2 border-white sm:w-10 sm:h-10 transition-transform duration-300 hover:scale-110" />
                 </div>
+                <div className="ml-3 sm:ml-4">
+                  <p className="font-bold text-base sm:text-lg gradient-text">114K+</p>
+                  <p className="text-gray-500 text-sm sm:text-base">Happy Clients</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

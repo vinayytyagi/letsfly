@@ -31,12 +31,12 @@ const DiscoverDestinations = () => {
   ];
 
   return (
-    <section className="py-16 bg-[#ddf8ff]">
-      <div className="container mx-auto text-center">
-        <h2 className="text-4xl font-heading mb-8">Discover Stunning Destinations</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <section className="py-12 sm:py-16 bg-[#ddf8ff]">
+      <div className="container mx-auto text-center px-4 sm:px-6">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading mb-6 sm:mb-8">Discover Stunning Destinations</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {destinations.map((dest, index) => (
-            <DestinationCard 
+            <DestinationCard
               key={index}
               destination={dest.destination}
               image={dest.image}
@@ -45,7 +45,7 @@ const DiscoverDestinations = () => {
             />
           ))}
         </div>
-        <div className="mt-8">
+        <div className="mt-6 sm:mt-8">
           <Button href="/packages">Explore All Destinations</Button>
         </div>
       </div>

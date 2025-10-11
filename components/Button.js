@@ -6,7 +6,7 @@ const Button = ({ href, onClick, children, className }) => {
   if (href) {
     return (
       <Link href={href} className={commonClasses}>
-          {children}
+        {children}
       </Link>
     );
   }
