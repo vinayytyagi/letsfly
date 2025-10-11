@@ -36,7 +36,11 @@ export default function Home() {
 
   return (
     <div className="bg-white">
-      <Navbar />
+      <Navbar 
+        initialBgColor="bg-transparent"
+        initialTextColor="text-white"
+        initialLogoColor="text-white"
+      />
       <main>
         <HeroSection />
         <Offerings />

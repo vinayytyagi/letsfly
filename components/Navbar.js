@@ -5,7 +5,11 @@ import Button from './Button';
 import { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
-const Navbar = () => {
+const Navbar = ({
+  initialBgColor = 'bg-transparent',
+  initialTextColor = 'text-white',
+  initialLogoColor = 'text-white'
+}) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
 
@@ -35,10 +39,12 @@ const Navbar = () => {
     };
   }, []);
 
-  const navClassName = `transition-all duration-300 ${isSticky ? 'fixed top-0 left-0 right-0 z-50 bg-[#d5e880] text-[#0B3D4A] shadow-lg' : 'absolute top-0 left-0 right-0 z-50 bg-transparent text-white'}`;
-  const linkClassName = `relative group transition-colors duration-300 ${isSticky ? 'text-[#0B3D4A] hover:text-primary' : 'text-[#fff] hover:text-[#d5e880]'}`;
+  const navClassName = `transition-all duration-300 ${isSticky ? 'fixed top-0 left-0 right-0 z-50 bg-[#d5e880] text-[#0B3D4A] shadow-lg' : `absolute top-0 left-0 right-0 z-50 ${initialBgColor} ${initialTextColor}`}`;
+  const linkClassName = `relative group transition-colors duration-300 ${isSticky ? 'text-[#0B3D4A] hover:text-primary' : `${initialTextColor} hover:text-[#d5e880]`}`;
   const underlineClassName = isSticky ? 'bg-[#0B3D4A]' : 'bg-[#d5e880]';
-  const mobileButtonClassName = `transition-colors duration-300 p-2 ${isSticky ? 'text-[#0B3D4A] hover:text-primary' : 'text-white hover:text-[#d5e880]'}`;
+  const mobileButtonClassName = `transition-colors duration-300 p-2 ${isSticky ? 'text-[#0B3D4A] hover:text-primary' : `${initialTextColor} hover:text-[#d5e880]`}`;
+  const logoClassName = `font-logo text-lg sm:text-2xl lg:text-3xl ml-2 ${isSticky ? 'text-[#0B3D4A]' : initialLogoColor}`;
+
 
   return (
     <nav className={navClassName}>
@@ -48,7 +54,7 @@ const Navbar = () => {
             <div className="w-8 h-8 sm:w-10 sm:h-10">
               <PacificHolidaysLogo />
             </div>
-            <span className={`font-logo text-lg sm:text-2xl lg:text-3xl ml-2 ${isSticky ? 'text-[#0B3D4A]' : 'text-white'}`}>Pacific Holidays</span>
+            <span className={logoClassName}>Pacific Holidays</span>
           </Link>
         </div>
 

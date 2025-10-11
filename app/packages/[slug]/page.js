@@ -72,7 +72,11 @@ export default function PackageDetail({ params }) {
 
   return (
     <div className="bg-secondary">
-      <Navbar />
+      <Navbar 
+        initialBgColor="bg-white"
+        initialTextColor="text-[#0B3D4A]"
+        initialLogoColor="text-[#0B3D4A]"
+      />
       <main className="container mx-auto py-24 px-6">
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="relative h-[500px]">
