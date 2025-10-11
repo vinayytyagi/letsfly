@@ -1,9 +1,9 @@
 'use client'
 import Image from 'next/image';
 import Link from 'next/link';
+import { phoneNumber } from '../data/packages.js';
 
 const PackageCard = ({ name, description, price, image, slug }) => {
-  const phoneNumber = "917289840031";
   return (
     <div className="group relative bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer transition-all duration-500 hover:shadow-xl hover:rounded-br-[90] transform hover:-translate-y-2">
       <div className="relative h-96 overflow-hidden">

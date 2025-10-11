@@ -5,37 +5,7 @@ import Button from '../../components/Button.js';
 import { FaArrowUp } from 'react-icons/fa';
 import Link from 'next/link';
 import PackageCard from '../../components/PackageCard.js';
-
-const packages = [
-  {
-    name: 'Exotic Goa',
-    slug: 'exotic-goa',
-    description: 'A 4-day trip to the sunny beaches of Goa, where you can relax, enjoy water sports, and experience the vibrant nightlife.',
-    price: '$300',
-    image: 'https://images.pexels.com/photos/1078983/pexels-photo-1078983.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-  },
-  {
-    name: 'Majestic Himalayas',
-    slug: 'majestic-himalayas',
-    description: 'A 7-day trek through the breathtaking Himalayan mountains, offering stunning views and a challenging adventure.',
-    price: '$800',
-    image: 'https://images.pexels.com/photos/2387793/pexels-photo-2387793.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-  },
-  {
-    name: 'Cultural Rajasthan',
-    slug: 'cultural-rajasthan',
-    description: 'A 5-day tour of the vibrant palaces and forts of Rajasthan, showcasing the rich history and culture of the region.',
-    price: '$500',
-    image: 'https://images.pexels.com/photos/356079/pexels-photo-356079.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-  },
-  {
-    name: 'Serene Kerala',
-    slug: 'serene-kerala',
-    description: 'A 6-day journey through the tranquil backwaters of Kerala, with its lush greenery and peaceful houseboat stays.',
-    price: '$600',
-    image: 'https://images.pexels.com/photos/1586795/pexels-photo-1586795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-  },
-];
+import { packages } from '../../data/packages.js';
 
 
 export default function Packages() {

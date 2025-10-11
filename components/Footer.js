@@ -2,6 +2,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaFacebookF, FaTwitter, FaInstagram, FaPinterest, FaYoutube, FaCalendarAlt, FaBook, FaWhatsapp, FaPhone, FaArrowUp } from 'react-icons/fa';
 
+const whatsappNumber = '7289840031';
+const whatsappMsg = `Hello! I'm interested in booking a package. Could you please provide more details and availability? Thank you!`;
+
 const Footer = () => {
   return (
     <footer className="bg-[#0B3D4A] text-white">
@@ -49,8 +52,28 @@ const Footer = () => {
               <ul>
                 <li className="flex items-center mb-2"><FaCalendarAlt className="mr-2 text-[#B2D83C]" /> Schedule Appointment</li>
                 <li className="flex items-center mb-2"><FaBook className="mr-2 text-[#B2D83C]" /> Book Your Trip Now</li>
-                <li className="flex items-center mb-2"><FaWhatsapp className="mr-2 text-[#B2D83C]" /> Whatsapp Us</li>
-                <li className="flex items-center mb-2"><FaPhone className="mr-2 text-[#B2D83C]" /> (+00)-0123456789</li>
+                <li className="flex items-center mb-2">
+                  <FaWhatsapp className="mr-2 text-[#B2D83C]" />
+                  <a
+                    href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMsg)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-[#B2D83C] transition-colors"
+                  >
+                    Whatsapp Us
+                  </a>
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaPhone className="mr-2 text-[#B2D83C]" />
+                  <a
+                    href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMsg)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-[#B2D83C] transition-colors"
+                  >
+                    (+91) {whatsappNumber}
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
