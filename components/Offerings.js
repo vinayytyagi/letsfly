@@ -32,7 +32,7 @@ const Offerings = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="relative">
             <Image
-              src="https://images.pexels.com/photos/2422915/pexels-photo-2422915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              src="https://wdtletsgo.wpengine.com/wp-content/uploads/2025/03/Demo-1-Filler-Image.png"
               alt="Happy traveler"
               width={600}
               height={400}
@@ -48,7 +48,7 @@ const Offerings = () => {
             </div>
           </div>
           <div>
-            <p className="text-sm font-bold tracking-widest text-gray-500">GET TAILOR-MADE EXPERIENCE</p>
+            <p className="text-sm font-bold text-gray-500">GET TAILOR-MADE EXPERIENCE</p>
             <h2 className="text-4xl font-heading text-[#0B3D4A] my-4">Your Passport To Memorable Adventures</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
               {offerings.map((offering) => (

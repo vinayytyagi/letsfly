@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --selection-color: #d5e880;
 }
 
 @theme inline {
@@ -22,4 +23,50 @@
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: var(--font-body), sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), serif;
+}
+
+.font-logo {
+  font-family: var(--font-logo), cursive;
+}
+
+/* Custom Selection Color */
+::selection {
+  background-color: rgba(213, 232, 128, 0.5);
+  color: #0d3a48;
+}
+
+::-moz-selection {
+  background-color: rgba(213, 232, 128, 0.5);
+  color: #0d3a48;
+}
+
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d3a48;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #d5e880 0%, #b8d65a 100%);
+  border-radius: 10px;
+  border: 2px solid #0d3a48;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #b8d65a 0%, #9bc23a 100%);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d5e880 #0d3a48;
 }

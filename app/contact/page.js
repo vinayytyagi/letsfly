@@ -1,7 +1,7 @@
 'use client'
-import Navbar from '../../components/Navbar';
+import Navbar from '../../components/Navbar.js';
 import { useState } from 'react';
-import Button from '../../components/Button';
+import Button from '../../components/Button.js';
 
 const ContactPage = () => {
     const [formData, setFormData] = useState({

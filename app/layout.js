@@ -1,6 +1,6 @@
 import { Gloock, Plus_Jakarta_Sans, Playwrite_DE_SAS } from "next/font/google";
 import "./globals.css";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer.js";
 
 const fontHeading = Gloock({
   variable: "--font-heading",

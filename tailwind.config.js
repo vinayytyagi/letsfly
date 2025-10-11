@@ -11,6 +11,7 @@ module.exports = {
         heading: ["var(--font-heading)", "serif"],
         body: ["var(--font-body)", "sans-serif"],
         logo: ["var(--font-logo)", "cursive"],
+        sans: ["var(--font-body)", "sans-serif"],
       },
       colors: {
         primary: "#1A73E8",
