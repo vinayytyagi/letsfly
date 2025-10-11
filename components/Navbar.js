@@ -87,7 +87,7 @@ const Navbar = ({
         </div>
 
         <div className="hidden md:flex items-center">
-          <Button href="/contact" className={isSticky ? 'bg-white text-[#0b3d4a]' : 'bg-[0B3D4A] text-[#0B3D4A]'}>
+          <Button href="/" className={isSticky ? 'bg-white text-[#0b3d4a]' : 'bg-[0B3D4A] text-[#0B3D4A]'}>
             Register Now
           </Button>
         </div>

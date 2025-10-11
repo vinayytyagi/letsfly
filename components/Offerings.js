@@ -1,28 +1,28 @@
-import { FaMountain, FaRoad, FaTree, FaCampground } from 'react-icons/fa';
+import { FaUmbrellaBeach, FaMountain, FaCity, FaPlane } from 'react-icons/fa';
 import Image from 'next/image';
 import Button from './Button';
 
 const Offerings = () => {
   const offerings = [
     {
+      icon: <FaUmbrellaBeach className="h-12 w-12 text-[#0B3D4A]" />,
+      title: 'Beach Destinations',
+      description: 'Explore pristine beaches and tropical paradises with our Andaman Islands and Goa packages.',
+    },
+    {
       icon: <FaMountain className="h-12 w-12 text-[#0B3D4A]" />,
-      title: 'Hill Stations',
-      description: 'Vivamus non fringilla cras leo scelerisque. Cubilia neque nascetur pharetra parturient.',
+      title: 'Adventure Tours',
+      description: 'Experience thrilling adventures with our Kerala backwater tours and Himalayan expeditions.',
     },
     {
-      icon: <FaRoad className="h-12 w-12 text-[#0B3D4A]" />,
-      title: 'Road Trips',
-      description: 'Feugiat phasellus aenean lobortis vulputate pretium hac nec. Libero condimentum.',
+      icon: <FaCity className="h-12 w-12 text-[#0B3D4A]" />,
+      title: 'City Experiences',
+      description: 'Discover vibrant cities and cultural heritage with our Dubai and Bangkok tour packages.',
     },
     {
-      icon: <FaCampground className="h-12 w-12 text-[#0B3D4A]" />,
-      title: 'Outdoor Packages',
-      description: 'Feugiat phasellus aenean lobortis vulputate pretium nec. Libero eget vitae potenti.',
-    },
-    {
-      icon: <FaTree className="h-12 w-12 text-[#0B3D4A]" />,
-      title: 'Forest Safari',
-      description: 'Non porta etiam, lectus massa gravida vivamus pellentesque aliquam. Dapibus quis.',
+      icon: <FaPlane className="h-12 w-12 text-[#0B3D4A]" />,
+      title: 'International Tours',
+      description: 'Explore exotic destinations worldwide with our premium international travel packages.',
     },
   ];
 
@@ -30,7 +30,7 @@ const Offerings = () => {
     <section className="py-12 sm:py-16 bg-white">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          <div className="relative order-2 lg:order-1">
+          <div className="relative order-1 lg:order-1">
             <Image
               src="https://wdtletsgo.wpengine.com/wp-content/uploads/2025/03/Demo-1-Filler-Image.png"
               alt="Happy traveler"
@@ -38,27 +38,18 @@ const Offerings = () => {
               height={400}
               className="rounded-lg w-full h-auto"
             />
-            <div className="absolute -top-2 sm:-top-4 -left-2 sm:-left-4 w-16 h-16 sm:w-24 sm:h-24 bg-white rounded-full flex items-center justify-center">
-              <Image
-                src="/stamp.png"
-                alt="Travel Stamp"
-                width={60}
-                height={60}
-                className="sm:w-20 sm:h-20"
-              />
-            </div>
           </div>
-          <div className="order-1 lg:order-2">
+          <div className="order-2 lg:order-2">
             <p className="text-xs sm:text-sm font-bold text-gray-500 animate-slide-in-left">GET TAILOR-MADE EXPERIENCE</p>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading text-[#0B3D4A] my-4 animate-slide-in-left" style={{ animationDelay: '0.2s' }}>Your Passport To Memorable Adventures</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 mt-6 lg:mt-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-10 mt-8 lg:mt-10">
               {offerings.map((offering) => (
                 <div key={offering.title}>
-                  <div className="flex items-center mb-2">
+                  <div className="flex items-center mb-6 md:mb-2">
                     <div className="w-8 h-8 sm:w-12 sm:h-12 flex-shrink-0">
                       {offering.icon}
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold ml-3 sm:ml-4 text-[#0B3D4A]">{offering.title}</h3>
+                    <h3 className="text-lg sm:text-xl font-bold ml-9 sm:ml-4 text-[#0B3D4A]">{offering.title}</h3>
                   </div>
                   <p className="text-sm sm:text-base text-gray-600">{offering.description}</p>
                 </div>

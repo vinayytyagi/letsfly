@@ -1,31 +1,89 @@
 'use client'
 import DestinationCard from './DestinationCard.js';
 import Button from './Button.js';
+import { packages } from '../data/packages.js';
 
 const DiscoverDestinations = () => {
+  const getPackageCount = (destination) => {
+    const destinationKeywords = {
+      'Andaman': ['Port Blair', 'Havelock', 'Neil', 'Baratang'],
+      'Kerala': ['Cochin', 'Munnar', 'Thekkady', 'Alleppey', 'Kanyakumari'],
+      'Goa': ['North Goa', 'South Goa'],
+      'Dubai': ['Dubai', 'Abu Dhabi'],
+      'Bangkok': ['Bangkok', 'Pattaya'],
+      'Bali': ['Kuta', 'Ubud', 'Nusa Penida', 'Bedugul']
+    };
+    
+    const keywords = destinationKeywords[destination] || [destination];
+    
+    return packages.filter(pkg => 
+      keywords.some(keyword => 
+        pkg.destinations.toLowerCase().includes(keyword.toLowerCase())
+      )
+    ).length;
+  };
+
+  const getPriceRange = (destination) => {
+    const destinationKeywords = {
+      'Andaman': ['Port Blair', 'Havelock', 'Neil', 'Baratang'],
+      'Kerala': ['Cochin', 'Munnar', 'Thekkady', 'Alleppey', 'Kanyakumari'],
+      'Goa': ['North Goa', 'South Goa'],
+      'Dubai': ['Dubai', 'Abu Dhabi'],
+      'Bangkok': ['Bangkok', 'Pattaya'],
+      'Bali': ['Kuta', 'Ubud', 'Nusa Penida', 'Bedugul']
+    };
+    
+    const keywords = destinationKeywords[destination] || [destination];
+    
+    const destinationPackages = packages.filter(pkg => 
+      keywords.some(keyword => 
+        pkg.destinations.toLowerCase().includes(keyword.toLowerCase())
+      )
+    );
+    
+    if (destinationPackages.length === 0) return "Starting from ₹15,999";
+    
+    const prices = destinationPackages.map(pkg => 
+      parseInt(pkg.price.replace(/[₹,]/g, ''))
+    );
+    
+    const minPrice = Math.min(...prices);
+    const maxPrice = Math.max(...prices);
+    
+    if (minPrice === maxPrice) {
+      return `Starting from ₹${minPrice.toLocaleString()}`;
+    }
+    
+    return `₹${minPrice.toLocaleString()} - ₹${maxPrice.toLocaleString()}`;
+  };
+
   const destinations = [
     {
-      destination: "Australia",
-      image: "https://images.pexels.com/photos/1842332/pexels-photo-1842332.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      price: "Price Starts ($116 - $225)",
+      destination: "Andaman Islands",
+      image: "https://images.pexels.com/photos/1078983/pexels-photo-1078983.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      price: getPriceRange("Andaman"),
+      packageCount: getPackageCount("Andaman"),
       href: "/packages"
     },
     {
-      destination: "Switzerland",
-      image: "https://images.pexels.com/photos/739407/pexels-photo-739407.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      price: "Price Starts ($175 - $200)",
+      destination: "Kerala",
+      image: "https://images.pexels.com/photos/1586795/pexels-photo-1586795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      price: getPriceRange("Kerala"),
+      packageCount: getPackageCount("Kerala"),
       href: "/packages"
     },
     {
-      destination: "Thailand",
-      image: "https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      price: "Price Starts ($85 - $200)",
+      destination: "Goa",
+      image: "https://images.pexels.com/photos/1078983/pexels-photo-1078983.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      price: getPriceRange("Goa"),
+      packageCount: getPackageCount("Goa"),
       href: "/packages"
     },
     {
-      destination: "Korea",
-      image: "https://images.pexels.com/photos/237272/pexels-photo-237272.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      price: "Price Starts ($175 - $285)",
+      destination: "Dubai",
+      image: "https://images.pexels.com/photos/1078983/pexels-photo-1078983.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      price: getPriceRange("Dubai"),
+      packageCount: getPackageCount("Dubai"),
       href: "/packages"
     }
   ];
@@ -41,6 +99,7 @@ const DiscoverDestinations = () => {
               destination={dest.destination}
               image={dest.image}
               price={dest.price}
+              packageCount={dest.packageCount}
               href={dest.href}
             />
           ))}

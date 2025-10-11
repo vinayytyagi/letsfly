@@ -31,9 +31,6 @@ const Team = () => {
             <button className="bg-[#0B3D4A] text-white font-bold py-2 px-6 sm:py-3 sm:px-8 rounded-md hover:bg-opacity-80 transition duration-300 text-sm sm:text-base">
               View Our Team
             </button>
-            <div className="mt-6 sm:mt-8">
-              <Image src="/stamp.png" alt="Travel Stamp" width={80} height={80} className="sm:w-20 sm:h-20 lg:w-24 lg:h-24 xl:w-25 xl:h-25" />
-            </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 order-1 lg:order-2">
             {teamMembers.map((member, index) => (

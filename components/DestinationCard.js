@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const DestinationCard = ({ destination, image, price, href = "#" }) => {
+const DestinationCard = ({ destination, image, price, packageCount, href = "#" }) => {
   return (
     <div className="group relative bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer transition-all duration-500 hover:shadow-xl hover:rounded-br-[90] transform hover:-translate-y-2">
       <div className="relative h-96 overflow-hidden">
@@ -21,9 +21,14 @@ const DestinationCard = ({ destination, image, price, href = "#" }) => {
             <h3 className="text-2xl font-heading mb-2 font-semibold transform transition-transform duration-300 delay-100 group-hover:scale-105">
               {destination}
             </h3>
-            <p className="text-sm font-body opacity-90 mb-4 transform transition-transform duration-300 delay-150 group-hover:scale-105">
-              {price}
-            </p>
+            <div className="flex items-center justify-between mb-2">
+              <p className="text-sm font-body opacity-90 transform transition-transform duration-300 delay-150 group-hover:scale-105">
+                {price}
+              </p>
+              <div className="bg-[#d5e880] text-[#0d3a48] px-2 py-1 rounded-full text-xs font-bold">
+                {packageCount} {packageCount === 1 ? 'Package' : 'Packages'}
+              </div>
+            </div>
 
             <Link
               href={href}
