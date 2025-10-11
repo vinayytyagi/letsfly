@@ -70,8 +70,8 @@ export default function Packages() {
         initialTextColor="text-[#0B3D4A]"
         initialLogoColor="text-[#0B3D4A]"
       />
-        <div className="bg-[#0B3D4A]/80 pt-20 text-white">
-          <div className="bg-[#0B3D4A] px-10 md:px-28 py-10 md:py-20">
+        <div className="bg-[#0B3D4A]/80 pt-16 md:pt-20 text-white">
+          <div className="bg-[#0B3D4A]/50 px-10 md:px-28 py-10 md:py-20">
               <h1 className="text-5xl font-heading font-bold">Browse Trips</h1>
               <p className="font-body mt-2"><Link href="/">Home</Link> <span className='text-gray-400'>/</span> Packages</p>
             </div>
