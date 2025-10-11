@@ -1,5 +1,6 @@
 import { FaMountain, FaRoad, FaTree, FaCampground } from 'react-icons/fa';
 import Image from 'next/image';
+import Button from './Button';
 
 const Offerings = () => {
   const offerings = [
@@ -48,7 +49,7 @@ const Offerings = () => {
           </div>
           <div>
             <p className="text-sm font-bold tracking-widest text-gray-500">GET TAILOR-MADE EXPERIENCE</p>
-            <h2 className="text-4xl font-serif text-[#0B3D4A] my-4">Your Passport To Memorable Adventures</h2>
+            <h2 className="text-4xl font-heading text-[#0B3D4A] my-4">Your Passport To Memorable Adventures</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
               {offerings.map((offering) => (
                 <div key={offering.title}>
@@ -61,9 +62,7 @@ const Offerings = () => {
               ))}
             </div>
             <div className="mt-8 flex items-center">
-                <button className="bg-[#C6F6D5] text-[#0B3D4A] font-bold py-3 px-6 rounded-md hover:bg-opacity-80 transition duration-300">
-                    Discover Our Offerings
-                </button>
+                <Button>Discover Our Offerings</Button>
                 <div className="flex items-center ml-6">
                     <div className="flex -space-x-4">
                         <Image src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client 1" width={40} height={40} className="rounded-full border-2 border-white" />
