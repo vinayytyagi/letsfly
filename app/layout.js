@@ -20,8 +20,16 @@ const fontLogo = Playwrite_DE_SAS({
 });
 
 export const metadata = {
-  title: "Pacific Holidays",
+  title: "Pacific Holidays India",
   description: "Your passport to memorable adventures",
+  icons: {
+    icon: [
+      { url: '/Logo.png', sizes: '32x32', type: 'image/png' },
+      { url: '/Logo.png', sizes: '16x16', type: 'image/png' },
+    ],
+    shortcut: '/Logo.png',
+    apple: '/Logo.png',
+  },
 };
 
 export default function RootLayout({ children }) {

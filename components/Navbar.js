@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link';
-import PacificHolidaysLogo from './PacificHolidaysLogo';
+import Image from 'next/image';
 import Button from './Button';
 import { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
@@ -39,6 +39,20 @@ const Navbar = ({
     };
   }, []);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup function to reset overflow when component unmounts
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   const navClassName = `transition-all duration-300 ${isSticky ? 'fixed top-0 left-0 right-0 z-50 bg-[#d5e880] text-[#0B3D4A] shadow-lg' : `absolute top-0 left-0 right-0 z-50 ${initialBgColor} ${initialTextColor}`}`;
   const linkClassName = `relative group transition-colors duration-300 ${isSticky ? 'text-[#0B3D4A] hover:text-primary' : `${initialTextColor} hover:text-[#d5e880]`}`;
   const underlineClassName = isSticky ? 'bg-[#0B3D4A]' : 'bg-[#d5e880]';
@@ -51,8 +65,13 @@ const Navbar = ({
       <div className="px-4 sm:px-6 lg:px-10 py-3 sm:py-4 flex justify-between items-center">
         <div className="flex items-center">
           <Link href="/" className="text-xl sm:text-2xl font-bold flex items-center">
-            <div className="w-8 h-8 sm:w-10 sm:h-10">
-              <PacificHolidaysLogo />
+            <div className="w-10 h-10 sm:w-14 sm:h-14 relative bg-white rounded-full">
+              <Image 
+                src="/Logo.png" 
+                alt="Pacific Holidays Logo" 
+                fill
+                className="object-cover pt-1 rounded-full"
+              />
             </div>
             <span className={logoClassName}>Pacific Holidays</span>
           </Link>
@@ -83,32 +102,51 @@ const Navbar = ({
         </div>
       </div>
 
-      <div className={`md:hidden fixed top-0 right-0 h-full w-68 bg-[#0B3D4A] transform transition-transform duration-300 ease-in-out z-40 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}>
-        <div className="flex flex-col h-full pt-20 px-6">
+      <div className={`md:hidden fixed top-0 right-0 h-full w-80 bg-gradient-to-b from-[#0B3D4A] to-[#1a4d5a] transform transition-all duration-500 ease-in-out z-40 shadow-2xl ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className="flex items-center justify-between p-6 border-b border-[#2a5d6a]">
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 relative bg-white rounded-full p-1">
+              <Image 
+                src="/Logo.png" 
+                alt="Pacific Holidays Logo" 
+                fill
+                className="object-contain rounded-full"
+              />
+            </div>
+            <span className="text-white font-logo text-xl">Pacific Holidays</span>
+          </div>
           <button
             onClick={() => setIsMobileMenuOpen(false)}
-            className="absolute top-4 right-4 text-white hover:text-[#d5e880] transition-colors duration-300 p-2"
+            className="text-white hover:text-[#d5e880] transition-all duration-300 p-2 rounded-full hover:bg-white/10"
           >
             <FaTimes size={24} />
           </button>
+        </div>
 
-          <div className="flex flex-col space-y-6 mb-8">
-            {navLinks.map((link, index) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-white hover:text-[#d5e880] text-xl font-semibold transition-colors duration-300 transform hover:translate-x-2"
-                style={{ animationDelay: `${index * 100}ms` }}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
-          </div>
+        <div className="flex flex-col px-6 py-8 space-y-4">
+          {navLinks.map((link, index) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="group relative text-[#0B3D4A] bg-[#d5e880] rounded-br-[50] hover:text-[#d5e880] text-lg font-medium transition-all duration-300 py-4 px-4 rounded-md hover:bg-white/10 hover:translate-x-2"
+              style={{ 
+                animationDelay: `${index * 100}ms`,
+                animation: isMobileMenuOpen ? 'slideInRight 0.5s ease-out forwards' : 'none'
+              }}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <span className="relative z-10">{link.name}</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#d5e880]/20 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </Link>
+          ))}
+        </div>
 
-          <div className="mt-auto mb-8">
-            <Button href="/contact" className="w-full text-center">
+        <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-[#2a5d6a]">
+          <div className="space-y-4">
+            <div className="text-center text-white/80 text-sm">
+              <p>Ready for your next adventure?</p>
+            </div>
+            <Button href="/contact" className="w-full text-center bg-[#d5e880] text-[#0B3D4A] hover:bg-[#c4d670] transition-all duration-300 transform hover:scale-105">
               Register Now
             </Button>
           </div>
@@ -117,7 +155,7 @@ const Navbar = ({
 
       {isMobileMenuOpen && (
         <div
-          className="md:hidden fixed inset-0 bg-black/30 bg-opacity-30 z-30"
+          className="md:hidden fixed inset-0 bg-black/50 z-30 transition-all duration-300"
           onClick={() => setIsMobileMenuOpen(false)}
         />
       )}

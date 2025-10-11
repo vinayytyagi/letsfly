@@ -37,7 +37,7 @@ const packages = [
   },
 ];
 
-const phoneNumber = "7289840031";
+const phoneNumber = "917289840031";
 
 export default function PackageDetail({ params }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -88,7 +88,7 @@ export default function PackageDetail({ params }) {
             <div className="flex justify-between items-center">
               <p className="text-3xl font-bold text-primary font-heading">{pkg.price}</p>
               <a
-                href={`https://wa.me/${phoneNumber}?text=I'm%20interested%20in%20the%20${encodeURIComponent(pkg.name)}%20package`}
+                href={`https://wa.me/${phoneNumber}?text=Hello!%20I'm%20interested%20in%20booking%20the%20${encodeURIComponent(pkg.name)}%20package%20(${pkg.price}).%20Could%20you%20please%20provide%20more%20details%20and%20availability?%20Thank%20you!`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-accent text-foreground font-bold py-3 px-6 rounded-full hover:bg-opacity-90 transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
