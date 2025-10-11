@@ -15,8 +15,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0d3a48;
+    --foreground: #0d3a48;
   }
 }
 
@@ -69,4 +69,25 @@ h1, h2, h3, h4, h5, h6 {
 * {
   scrollbar-width: thin;
   scrollbar-color: #d5e880 #0d3a48;
+}
+
+/* Destination Card Animations */
+.destination-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.destination-card:hover {
+  transform: translateY(-4px);
+}
+
+.destination-card-image {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.destination-card-content {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.destination-card-browse-link {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }

@@ -33,28 +33,26 @@ const Blogs = () => {
         <div className="flex justify-between items-center mb-8">
             <div>
                 <p className="text-sm font-bold tracking-widest text-gray-500">NEWS & TRENDS IN TRAVEL</p>
-                <h2 className="text-5xl font-serif text-[#0B3D4A]">News, Tips & Destination Stories</h2>
+                <h2 className="text-4xl font-serif text-[#0B3D4A]">News, Tips & Destination Stories</h2>
             </div>
-            <div className="text-right">
-                <p className="text-gray-600">Blandit conubia ullamcorper nullam dictum non Tincidunt augue interdum velit<br/> euismod in pellentesque. Molestie nunc non blandit massa enim.</p>
+            <div className="text-left">
+                <p className="text-gray-600 text-sm">Blandit conubia ullamcorper nullam dictum non Tincidunt augue interdum velit<br/> euismod in pellentesque. Molestie nunc non blandit massa enim.</p>
                 <Link href="/blogs" className="text-primary font-bold underline">View All Blogs</Link>
             </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post) => (
-            <div key={post.title} className="rounded-lg overflow-hidden shadow-lg group">
-                <div className="overflow-hidden">
-                    <Image src={post.image} alt={post.title} width={400} height={300} className="w-full h-64 object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                </div>
-              <div className="p-6 bg-white relative -mt-16 mx-6 rounded-lg shadow-md z-10">
+            <div key={post.title} className="relative rounded-lg overflow-hidden shadow-lg group h-[500px]">
+                <Image src={post.image} alt={post.title} width={400} height={400} className="w-full h-full object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-110" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 m-6 bg-white rounded-t-lg shadow-md">
                 <div className="flex items-center text-sm text-gray-500 mb-4">
                   <FaUser className="mr-2" />
                   <span>{post.author}</span>
                   <FaComments className="ml-4 mr-2" />
                   <span>{post.comments} COMMENTS</span>
                 </div>
-                <h3 className="text-2xl font-serif text-[#0B3D4A] mb-2">{post.title}</h3>
-                <p className="text-gray-600 mb-4">{post.excerpt}</p>
+                <h3 className="text-xl font-serif text-[#0B3D4A] mb-2">{post.title}</h3>
+                <p className="text-[#0] mb-4">{post.excerpt}</p>
                 <Link href="/blog/post" className="font-bold text-primary underline">Read More</Link>
               </div>
             </div>

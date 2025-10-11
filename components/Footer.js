@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaFacebookF, FaTwitter, FaInstagram, FaPinterest, FaYoutube, FaCalendarAlt, FaBook, FaWhatsapp, FaPhone, FaArrowUp } from 'react-icons/fa';
-import LogoIcon from './LogoIcon';
 
 const Footer = () => {
   return (
@@ -16,8 +15,8 @@ const Footer = () => {
                     <h3 className="text-sm font-bold tracking-widest">OUR NEWSLETTER</h3>
                     <h2 className="text-3xl font-serif my-4">Sign Up To Stay Ahead With The Latest Updates And New Exciting Deals!</h2>
                     <div className="flex mt-4">
-                        <input type="email" placeholder="Your Email Id" className="bg-white text-black p-3 rounded-l-md w-full" />
-                        <button className="bg-[#B2D83C] text-black font-bold p-3 rounded-r-md">Submit</button>
+                        <input type="email" placeholder="Your Email Id" className="bg-white text-black p-3 mr-2 rounded-md w-full" />
+                        <button className="bg-[#B2D83C] text-[#0d3a48] text-sm cursor-pointer p-3 px-12 rounded-md rounded-br-[30]">Submit</button>
                     </div>
                     <p className="text-xs mt-2">By Entering the email you accept the <Link href="/terms" className="underline">terms & conditions</Link></p>
                 </div>
@@ -57,15 +56,15 @@ const Footer = () => {
             <div>
               <h3 className="font-serif text-xl mb-4">Download Our App</h3>
               <p className="text-sm mb-4">Aliquam eleifend posuere sollicitudin ultrices. Porta nibh venenatis Sodales ut etiam amet.</p>
-              <div className="flex gap-2">
-                <Image src="https://i.imgur.com/3Z4YjZt.png" alt="Google Play" width={120} height={40} />
-                <Image src="https://i.imgur.com/h22H7xJ.png" alt="App Store" width={120} height={40} />
-              </div>
+              {/* <div className="flex gap-2"> */}
+                {/* <Image src="https://i.imgur.com/3Z4YjZt.png" alt="Google Play" width={120} height={40} /> */}
+                {/* <Image src="https://i.imgur.com/h22H7xJ.png" alt="App Store" width={120} height={40} /> */}
+              {/* </div> */}
             </div>
           </div>
           <div className="flex justify-between items-center mt-12 border-t border-gray-700 pt-8">
             <div className="flex items-center">
-                <LogoIcon />
+                {/* <LogoIcon /> */}
                 <p className="ml-4 text-sm">Copyright @ Letsgoexample.Com, All Rights Reserved 2025</p>
             </div>
             <div className="flex gap-4 items-center">
@@ -73,9 +72,9 @@ const Footer = () => {
                 <FaTwitter />
                 <FaPinterest />
                 <FaYoutube />
-                <button className="bg-[#B2D83C] text-black p-3 rounded-full shadow-lg hover:bg-opacity-80 transition duration-300">
-                    <FaArrowUp />
-                </button>
+                {/* <button className="bg-[#B2D83C] text-black p-3 rounded-full shadow-lg hover:bg-opacity-80 transition duration-300"> */}
+                    {/* <FaArrowUp /> */}
+                {/* </button> */}
             </div>
           </div>
         </div>

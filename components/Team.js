@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import TeamCard from './TeamCard.js';
 
 const Team = () => {
   const teamMembers = [
@@ -37,18 +37,12 @@ const Team = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {teamMembers.map((member, index) => (
-              <div key={member.name} className={`relative rounded-lg overflow-hidden shadow-lg ${index === 1 ? 'mt-8' : ''}`}>
-                <Image src={member.image} alt={member.name} width={300} height={400} className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6">
-                  <h3 className="text-white text-2xl font-serif">{member.name}</h3>
-                  <p className="text-white">{member.title}</p>
-                </div>
-                <div className="absolute top-4 right-4 flex flex-col gap-2">
-                    <div className="bg-yellow-400 p-2 rounded-full text-black"><FaFacebookF /></div>
-                    <div className="bg-yellow-400 p-2 rounded-full text-black"><FaTwitter /></div>
-                    <div className="bg-yellow-400 p-2 rounded-full text-black"><FaInstagram /></div>
-                    <div className="bg-yellow-400 p-2 rounded-full text-black"><FaLinkedinIn /></div>
-                </div>
+              <div key={member.name} className={index === 1 ? 'mt-8' : ''}>
+                <TeamCard 
+                  name={member.name}
+                  title={member.title}
+                  image={member.image}
+                />
               </div>
             ))}
           </div>
