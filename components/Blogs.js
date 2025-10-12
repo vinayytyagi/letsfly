@@ -9,21 +9,21 @@ const Blogs = () => {
       author: 'DEVELOPER',
       comments: 2,
       excerpt: 'Inceptos curae conubia arcu volutpat ac dignissim. Consectetur commodo...',
-      image: 'https://images.pexels.com/photos/2422461/pexels-photo-2422461.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      image: '/assets/Pacific-blog-1.png',
     },
     {
       title: 'Tales Of Maritime Journeys',
       author: 'DEVELOPER',
       comments: 2,
       excerpt: 'Ridiculus cubilia ultricies sem blandit rutrum odio morbi hendrerit venenatis...',
-      image: 'https://images.pexels.com/photos/1654883/pexels-photo-1654883.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      image: '/assets/Pacific-blog-2.png',
     },
     {
       title: 'Mountain Climbing Objectives',
       author: 'DEVELOPER',
       comments: 2,
       excerpt: 'Duis massa et porta conubia adipiscing torquent senectus phasellus...',
-      image: 'https://images.pexels.com/photos/2694389/pexels-photo-2694389.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      image: '/assets/Pacific-blog-3.png',
     },
   ];
 
@@ -37,7 +37,7 @@ const Blogs = () => {
           </div>
           <div className="text-left w-full lg:w-auto">
             <p className="text-gray-600 text-xs sm:text-sm mb-2 lg:mb-0">Blandit conubia ullamcorper nullam dictum non Tincidunt augue interdum velit<br className="hidden sm:block" /> euismod in pellentesque. Molestie nunc non blandit massa enim.</p>
-            <Link href="/blogs" className="text-primary font-bold underline text-sm sm:text-base">View All Blogs</Link>
+            <Link href="/" className="text-primary font-bold underline text-sm sm:text-base">View All Blogs</Link>
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
@@ -53,7 +53,7 @@ const Blogs = () => {
                 </div>
                 <h3 className="text-lg sm:text-xl font-serif text-[#0B3D4A] mb-2">{post.title}</h3>
                 <p className="text-[#0] mb-3 sm:mb-4 text-sm sm:text-base">{post.excerpt}</p>
-                <Link href="/blog/post" className="font-bold text-primary underline text-sm sm:text-base">Read More</Link>
+                <Link href="/" className="text-primary underline text-sm sm:text-base">Read More</Link>
               </div>
             </div>
           ))}

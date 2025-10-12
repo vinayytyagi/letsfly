@@ -32,7 +32,7 @@ const Offerings = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="relative order-1 lg:order-1">
             <Image
-              src="https://wdtletsgo.wpengine.com/wp-content/uploads/2025/03/Demo-1-Filler-Image.png"
+              src="/assets/pacific-girl.png"
               alt="Happy traveler"
               width={600}
               height={400}
