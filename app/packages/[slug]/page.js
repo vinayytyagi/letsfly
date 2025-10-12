@@ -35,7 +35,10 @@ export default function PackageDetail({ params }) {
     const getSlug = async () => {
       const resolvedParams = await params;
       setSlug(resolvedParams.slug);
-      setPkg(packages.find((p) => p.slug === resolvedParams.slug));
+      const foundPkg = packages.find((p) => p.slug === resolvedParams.slug);
+      console.log('Found package:', foundPkg);
+      console.log('Image path:', foundPkg?.image);
+      setPkg(foundPkg);
     };
     getSlug();
   }, [params]);
@@ -101,6 +104,8 @@ export default function PackageDetail({ params }) {
               alt={pkg.name} 
               fill
               className="object-cover hover:scale-110 transition-transform duration-500 ease-in-out"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
             <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-white">

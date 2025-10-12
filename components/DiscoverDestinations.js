@@ -60,28 +60,28 @@ const DiscoverDestinations = () => {
   const destinations = [
     {
       destination: "Andaman Islands",
-      image: "https://images.pexels.com/photos/1078983/pexels-photo-1078983.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      image: "/assets/andaman5d.png",
       price: getPriceRange("Andaman"),
       packageCount: getPackageCount("Andaman"),
       href: "/packages"
     },
     {
       destination: "Kerala",
-      image: "https://images.pexels.com/photos/1586795/pexels-photo-1586795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      image: "/assets/kerala.png",
       price: getPriceRange("Kerala"),
       packageCount: getPackageCount("Kerala"),
       href: "/packages"
     },
     {
-      destination: "Goa",
-      image: "https://images.pexels.com/photos/1078983/pexels-photo-1078983.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      price: getPriceRange("Goa"),
-      packageCount: getPackageCount("Goa"),
+      destination: "Bangkok",
+      image: "/assets/bangkok.png",
+      price: getPriceRange("Bangkok"),
+      packageCount: getPackageCount("Bangkok"),
       href: "/packages"
     },
     {
       destination: "Dubai",
-      image: "https://images.pexels.com/photos/1078983/pexels-photo-1078983.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      image: "/assets/dubai.png",
       price: getPriceRange("Dubai"),
       packageCount: getPackageCount("Dubai"),
       href: "/packages"

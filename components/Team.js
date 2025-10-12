@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import TeamCard from './TeamCard.js';
+import Button from './Button.js';
 
 const Team = () => {
   const teamMembers = [
@@ -28,9 +29,9 @@ const Team = () => {
             <p className="text-xs sm:text-sm font-bold tracking-widest">YOUR MOST TRUSTED GUIDES</p>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-serif my-4">People Who Make Travel Enchanting</h2>
             <p className="mb-4 sm:mb-6 text-sm sm:text-base">Lobortis facilisis sollicitudin tincidunt pellentesque elit ullamcorper dignissim. Condimentum id venenatis a condimentum viet.</p>
-            <button className="bg-[#0B3D4A] text-white font-bold py-2 px-6 sm:py-3 sm:px-8 rounded-md hover:bg-opacity-80 transition duration-300 text-sm sm:text-base">
+            <Button>
               View Our Team
-            </button>
+            </Button>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 order-1 lg:order-2">
             {teamMembers.map((member, index) => (
